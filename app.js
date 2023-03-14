@@ -2,6 +2,9 @@ const sections = document.querySelectorAll('.section');
 const sectBtns = document.querySelectorAll('.controlls');
 const sectBtn = document.querySelectorAll('.control');
 const allSections = document.querySelector('.main-content');
+const formSubmit = document.querySelector('.submit-btn');
+
+pageTransitions();
 
 function pageTransitions (){
     //button click active class
@@ -9,7 +12,7 @@ function pageTransitions (){
         sectBtn[i].addEventListener('click', function(){
             let currentBtn = document.querySelectorAll('.active-btn');
             currentBtn[0].className = currentBtn[0].className.replace('active-btn', '');
-            this.className += ' active-btn'
+            this.className += ' active-btn';
         })
 
     }
@@ -19,9 +22,10 @@ function pageTransitions (){
         if(id){//remove selected from the other button
             sectBtn.forEach((btn) => {
                 btn.classList.remove('active')
+                console.log("You pressed the button!!")
             })
             e.target.classList.add('active')
-            postToGoogle();
+            
 
             //hide other sections
             sections.forEach((section)=>{
@@ -33,27 +37,24 @@ function pageTransitions (){
     })
 }
 
+
+
 function postToGoogle() {
   
-    const field1 = document.getElementById('nameField');
-    const field1_5 = field1.value;
-    console.log("I'm here: " + field1_5)
-    // const field2 = document.getElementById("emailField");
-    // const field3 = document.getElementById("subjectField");
-    // const field4 = document.getElementById("messageField");
-    // const field1 = "Clay"
-    // const field2 = "dcblanton78@gmail.com"
-    // const field3 = "Hello"
-    // const field4 = "World"
-    // console.log("Name:" + field1);
-    // // console.log("Name 2: " + field1.value)
-    // // console.log("Email:" + field2);
-    // // console.log("Subject:" + field3);
-    // // console.log("Message" + field4);
-    // // var field1 = $("#nameField").val();
-    // // var field2 = $("#emailField").val();
-    // // var field3 = $("#subjectField").val();
-    // // var field4 = $("#messageField").val();
+    //const field1 = document.getElementById('nameField');
+    var field1 = $("#nameField").val();
+    var field2 = $("#emailField").val();
+    var field3 = $("#subjectField").val();
+    var field4 = $("#messageField").val();
+    
+    
+    //const field1_5 = field1.value;
+    console.log("here is the value of field1: " + field1);
+    console.log("here is the value of field2:" + field2);
+    console.log("here is the value of field3: " +field3);
+    console.log("here is the value of field4: " +field4)
+    
+ 
      
     // // if(field1 == ""){
     // //     alert('Please Fill Your Name');
@@ -74,25 +75,31 @@ function postToGoogle() {
 
     
 
-    // $.ajax({
-    //     url: "https://docs.google.com/forms/d/e/1FAIpQLSfhuwHnoEzBrzEZ5D146avt9uw8rhAwgmEZ29ZkSwQbvBtJng/formResponse?",
-    //     data: {"entry.1130294729": field1, "entry.501856560": field2, "entry.1826222236": field3, "entry.1331658504": field4},
-    //     type: "POST",
-    //     dataType: "xml",
-    //     success: function(d)
-    //     {
-    //     },
-    //     error: function(x, y, z)
-    //         {
+    $.ajax({
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSfhuwHnoEzBrzEZ5D146avt9uw8rhAwgmEZ29ZkSwQbvBtJng/formResponse?",
+        data: {"entry.1130294729": field1, "entry.501856560": field2, "entry.1826222236": field3, "entry.1331658504": field4},
+        type: "POST",
+        dataType: "xml",
+        success: function(d)
+        {
+        },
+        error: function(x, y, z)
+            {
 
-    //             $('#success-msg').show();
-    //             $('#form').hide();
+                $('#success-msg').show();
+                $('#form').hide();
                 
-    //         }
-    // });
-    // return false;
-}
+            }
+    });
+    alert("Thank you for your message. I'll get back to you as soon as I can");
+    //debugger;
 
-pageTransitions();
+    return false;
+}
+formSubmit.addEventListener('click', (e) => {
+    console.log("made it!");
+    postToGoogle();
+}) 
+//postToGoogle();
 
 
