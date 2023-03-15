@@ -386,9 +386,13 @@ section {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
     margin-top: 3rem;
+    
     .portfolio-item {
         position: relative;
         border-radius: 15px;
+        border-width: 1 rem;
+        border-color: white;
+
         img {
             width: 100%;
             height: 300px;
