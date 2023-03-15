@@ -206,6 +206,13 @@ section {
   margin: 1.5rem 0;
   line-height: 2rem;
 }
+.header-content .right-header .built-by {
+  position: absolute;
+  color: white;
+  bottom: 5px;
+  right: 10px;
+  font-size: 10px;
+}
 
 /*About*/
 .about-container {
@@ -405,7 +412,7 @@ section {
 
 .portfolios {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
   margin-top: 3rem;
 }

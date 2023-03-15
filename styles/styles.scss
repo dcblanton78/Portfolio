@@ -58,6 +58,8 @@ header {
     padding: 0 !important;
 }
 
+
+
 section {
     min-height: 100vh;
     width: 100%;
@@ -153,6 +155,7 @@ section {
         display: flex;
         align-items: center;
         position: relative;
+ 
         .h-shape {
             transition: all .4s ease-in-out;
             width: 65%;
@@ -196,6 +199,15 @@ section {
         p {
             margin: 1.5rem 0;
             line-height: 2rem;
+        }
+        .built-by{
+            
+            position: absolute;
+            color: white;
+            bottom: 5px;
+            right: 10px;
+            font-size: 10px;
+        
         }
     }
 }
@@ -383,7 +395,7 @@ section {
 
 .portfolios {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
     margin-top: 3rem;
     
