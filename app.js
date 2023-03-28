@@ -29,8 +29,12 @@ function postToGoogle() {
     var field2 = $("#emailField").val();
     var field3 = $("#subjectField").val();
     var field4 = $("#messageField").val();
-    
-    
+    fieldValidations();
+    if(fieldValidations()==false){
+        console.log("field validations are false")
+        return;
+    }
+   
     //const field1_5 = field1.value;
     console.log("here is the value of field1: " + field1);
     console.log("here is the value of field2:" + field2);
@@ -51,15 +55,53 @@ function postToGoogle() {
         dataType: "xml",
         success: function(d)
         {
+           
         },
         error: function(x, y, z)
             {
-
-                $('#success-msg').show();
+                document.getElementById("outcome-msg").innerHTML = "Thank you for your message. I'll get back to you as soon as I can!!";
+                $('#outcome-msg').show();
                 $('#form').hide();
                 
             }
     });
+
+    function fieldValidations(){
+        if(field1 == ""){
+            //alert('Please Fill Your Name');
+            document.getElementById("outcome-msg").innerHTML = "Please enter your name!";
+            $('#outcome-msg').show();
+            document.getElementById("nameField").focus();
+            return false;
+        }
+        if(field2 == ""){
+            document.getElementById("outcome-msg").innerHTML = "Please enter an email address!";
+            $('#outcome-msg').show();
+            document.getElementById("emailField").focus();
+            return false;
+        }
+        if(field2.includes("@")==false){
+            document.getElementById("outcome-msg").innerHTML = "Please enter a valid email address!";
+            $('#outcome-msg').show();
+            document.getElementById("emailField").focus();
+            return false;
+        }
+        if(field3 == ""){
+            document.getElementById("outcome-msg").innerHTML = "Please enter a Subject!";
+            $('#outcome-msg').show();
+            document.getElementById("subjectField").focus();
+            return false;
+        }
+        if(field4 == ""){
+            document.getElementById("outcome-msg").innerHTML = "Please enter your message!";
+            $('#outcome-msg').show();
+            document.getElementById("messageField").focus();
+            return false;
+        }
+        else return true;
+
+    }
+  
    // alert("Thank you for your message. I'll get back to you as soon as I can");
     //debugger;
    
@@ -114,20 +156,20 @@ function postToGoogle() {
 // })
 
 
-  // // if(field1 == ""){
-    // //     alert('Please Fill Your Name');
-    // //     document.getElementById("nameField").focus();
-    // //     return false;
-    // // }
-    // // if(field2 == ""){
-    // //     alert('Please Fill Your Email');
-    // //     document.getElementById("emailField").focus();
-    // //     return false;
-    // // }
-    // // if(field3 == "" || field3.length > 10 || field3.length < 10){
-    // //     alert('Please Fill Your Mobile Number');
-    // //     document.getElementById("mobField").focus();
-    // //     return false;
-    // // }
+//   if(field1 == ""){
+//         alert('Please Fill Your Name');
+//         document.getElementById("nameField").focus();
+//         return false;
+//     }
+//     if(field2 == ""){
+//         alert('Please Fill Your Email');
+//         document.getElementById("emailField").focus();
+//         return false;
+//     }
+//     if(field3 == "" || field3.length > 10 || field3.length < 10){
+//         alert('Please Fill Your Mobile Number');
+//         document.getElementById("mobField").focus();
+//         return false;
+//     }
 
 
