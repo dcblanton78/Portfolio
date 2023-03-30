@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "./node_modules/.bin/json-server --static . data.json -m middleware.js --config json-server.json",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "npx nodemon index.js"
+    "start": "http-server -p 3030",
+    "cy:run": "cypress run",
+    "test": "start-server-and-test start http://localhost:3030 cy:run"
   },
   "keywords": [],
   "author": "",
