@@ -1,16 +1,10 @@
-version: 2.0
-jobs:
-  build:
-    docker:
-      # specify the version of Node.js to use
-      - image: circleci/node:10
-
-    steps:
-      # run our tests
-      - run: npm run test
-
-      # set the base URL environment variable for Cypress
-      - run: echo "CYPRESS_BASE_URL=https://example.com" >> $BASH_ENV
-
-  deploy:
-    # ... deployment steps here ...
+version: '2.1'
+orbs:
+  cypress: cypress-io/cypress@3
+workflows:
+  use-my-orb:
+    jobs:
+      - cypress/run:
+          cypress-command: npx cypress run --browser chrome
+          install-browsers: true
+          start-command: 'npm run start:dev'
