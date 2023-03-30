@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "./node_modules/.bin/json-server --static . data.json -m middleware.js --config json-server.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
