@@ -5,13 +5,15 @@
   "main": "app.js",
   "scripts": {
     "start": "./node_modules/.bin/json-server --static . data.json -m middleware.js --config json-server.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "npx nodemon index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "live-server": "^1.2.2",
+    "nodeman": "^1.1.2",
     "start-server-and-test": "^2.0.0"
   },
   "devDependencies": {
