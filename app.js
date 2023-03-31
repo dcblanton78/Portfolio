@@ -87,7 +87,7 @@ function postToGoogle() {
             return false;
         }
         if(field3 == ""){
-            document.getElementById("outcome-msg").innerHTML = "Please enter a Subject!";
+            document.getElementById("outcome-msg").innerHTML = "Please enter a fucking Subject!";
             $('#outcome-msg').show();
             document.getElementById("subjectField").focus();
             return false;
