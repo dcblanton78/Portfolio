@@ -7,21 +7,17 @@
             document.getElementById(button.dataset.id).classList.add("active");
         })
     });
-    document.addEventListener('DOMContentLoaded', function () {
-        document.querySelector(".theme-btn").addEventListener("click", () => {
+    document.querySelector(".theme-btn").addEventListener("click", () => {
         document.body.classList.toggle("light-mode");
-    })
     })
 })();
 
 
-
-document.addEventListener('DOMContentLoaded', function () {
-    document.querySelector(".submit-btn").addEventListener("click", () => {
+//const formSubmit = document.querySelector('.submit-btn');
+document.querySelector(".submit-btn").addEventListener("click", () => {
     console.log("Made it");
     event.preventDefault();
     postToGoogle();
-    })
 })
 
 
@@ -113,11 +109,7 @@ function postToGoogle() {
      
 
     return false;
-    
 }
-
-
-
 
 
 
