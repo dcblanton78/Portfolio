@@ -87,13 +87,13 @@ function postToGoogle() {
             return false;
         }
         if(field3 == ""){
-            document.getElementById("outcome-msg").innerHTML = "Please enter a fucking Subject!";
+            document.getElementById("outcome-msg").innerHTML = "Please enter a Subject!";
             $('#outcome-msg').show();
             document.getElementById("subjectField").focus();
             return false;
         }
         if(field4 == ""){
-            document.getElementById("outcome-msg").innerHTML = "Please enter your message!";
+            document.getElementById("outcome-msg").innerHTML = "Please enter a message!";
             $('#outcome-msg').show();
             document.getElementById("messageField").focus();
             return false;
