@@ -1,3 +1,5 @@
+
+
 {
   "name": "portfolio",
   "version": "1.0.0",
@@ -6,7 +8,7 @@
   "scripts": {
     "start": "http-server -p 3030",
     "cy:run": "cypress run",
-    "test": "start-server-and-test start http://localhost:3030 cy:run"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +21,8 @@
   "devDependencies": {
     "angular-http-server": "^1.11.1",
     "cypress": "12.9.0",
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "jest": "^21.2.1"
   }
 }
+
