@@ -93,7 +93,7 @@ function postToGoogle() {
             return false;
         }
         if(field4 == ""){
-            document.getElementById("outcome-msg").innerHTML = "Please enter a message!";
+            document.getElementById("outcome-msg").innerHTML = "Please enter your message!";
             $('#outcome-msg').show();
             document.getElementById("messageField").focus();
             return false;
