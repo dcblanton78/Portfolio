@@ -1,10 +1,15 @@
-version: '2.1'
+version: "2.1"
 orbs:
+  jest: blimmer/jest@1.1.1
   cypress: cypress-io/cypress@3
 workflows:
+  test:
+    jobs:
+      - jest/test
+
   use-my-orb:
     jobs:
       - cypress/run:
           cypress-command: npx cypress run --browser chrome
           install-browsers: true
-          start-command: 'npm run start'
+          start-command: "npm run start"
