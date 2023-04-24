@@ -129,31 +129,9 @@ function fieldValidations(field1, field2, field3, field4) {
         emailField.focus();
       }
       return false;
-    }
-  } else return true;
-
-  //   if (field2.includes("@") == false) {
-  //     document.getElementById("outcome-msg").innerHTML =
-  //       "Please enter a valid email address!";
-  //     $("#outcome-msg").show();
-  //     document.getElementById("emailField").focus();
-  //     return false;
-  //   }
-  //   if (field3 == "") {
-  //     document.getElementById("outcome-msg").innerHTML =
-  //       "Please enter a Subject!";
-  //     $("#outcome-msg").show();
-  //     document.getElementById("subjectField").focus();
-  //     return false;
-  //   }
-  //   if (field4 == "") {
-  //     document.getElementById("outcome-msg").innerHTML =
-  //       "Please enter your message!";
-  //     $("#outcome-msg").show();
-  //     document.getElementById("messageField").focus();
-  //     return false;
-
-  //return false;
+    } else return true;
+  }
+  return false;
 }
 
 module.exports = fieldValidations;
