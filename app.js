@@ -131,6 +131,6 @@ function fieldValidations(field1, field2, field3, field4) {
       return false;
     } else return true;
   }
-  return false;
+  //return true;
 }
 //module.exports = fieldValidations;
