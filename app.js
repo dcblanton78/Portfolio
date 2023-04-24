@@ -83,7 +83,7 @@ function fieldValidations(field1, field2, field3, field4) {
   if (field2 == "") {
     const outcomeMsg = document.getElementById("outcome-msg");
     if (outcomeMsg) {
-      outcomeMsg.innerHTML = "Please enter your name and email address!";
+      outcomeMsg.innerHTML = "Please enter an email address!";
       $("#outcome-msg").show();
     }
     const emailField = document.getElementById("emailField");
@@ -95,7 +95,7 @@ function fieldValidations(field1, field2, field3, field4) {
   if (field3 == "") {
     const outcomeMsg = document.getElementById("outcome-msg");
     if (outcomeMsg) {
-      outcomeMsg.innerHTML = "Please enter a subject!";
+      outcomeMsg.innerHTML = "Please enter a Subject!";
       $("#outcome-msg").show();
     }
     const subjectField = document.getElementById("subjectField");
@@ -133,5 +133,4 @@ function fieldValidations(field1, field2, field3, field4) {
   }
   return false;
 }
-
-module.exports = fieldValidations;
+//module.exports = fieldValidations;
