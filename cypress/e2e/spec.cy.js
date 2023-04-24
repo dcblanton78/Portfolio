@@ -57,7 +57,7 @@ describe("Test My Portfolio", () => {
       //cy.get('[data-cy="contact-subject"]').type("Clay Test Subject")
       cy.get('[data-cy="contact-message"]').type("Clay Test Message");
       cy.get('[data-cy="cy-submit"]').click();
-      cy.get('[data-cy="outcomeMessage"]').contains("Please enter a subject!");
+      cy.get('[data-cy="outcomeMessage"]').contains("Please enter a Subject!");
     });
     it("contact message form throws an error when message body is empty", () => {
       cy.visit("http://127.0.0.1:3030/");
