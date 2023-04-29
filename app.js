@@ -35,8 +35,9 @@ function postToGoogle() {
   var field2 = $("#emailField").val();
   var field3 = $("#subjectField").val();
   var field4 = $("#messageField").val();
-  fieldValidations(field1, field2, field3, field4);
-  if (fieldValidations() == false) {
+  let fieldErrorFlag = fieldValidations(field1, field2, field3, field4);
+  console.log("test: " + fieldErrorFlag);
+  if (fieldErrorFlag == false) {
     console.log("field validations are false");
     return;
   }
@@ -95,7 +96,8 @@ function fieldValidations(field1, field2, field3, field4) {
   if (field3 == "") {
     const outcomeMsg = document.getElementById("outcome-msg");
     if (outcomeMsg) {
-      outcomeMsg.innerHTML = "Please enter a Subject!";
+      outcomeMsg.innerHTML = "Please enter a subject!";
+
       $("#outcome-msg").show();
     }
     const subjectField = document.getElementById("subjectField");
@@ -133,6 +135,9 @@ function fieldValidations(field1, field2, field3, field4) {
   }
   //return true;
 }
-module.exports = fieldValidations;
+
+if (typeof module !== "undefined") {
+  module.exports = fieldValidations;
+}
 
 //modifying file again
