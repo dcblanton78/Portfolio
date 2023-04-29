@@ -59,6 +59,7 @@ describe("fieldValidations function", () => {
     const result = fieldValidations(nameField, emailField, "", messageField);
     expect(result).toBe(false);
     const outcomeMsg = document.getElementById("outcome-msg");
+
     if (outcomeMsg) {
       expect(outcomeMsg.innerHTML).toBe("Please enter a subject!");
     }
