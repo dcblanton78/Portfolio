@@ -36,7 +36,7 @@ function postToGoogle() {
   var field3 = $("#subjectField").val();
   var field4 = $("#messageField").val();
   let fieldErrorFlag = fieldValidations(field1, field2, field3, field4);
-  console.log("test: " + test);
+  console.log("test: " + fieldErrorFlag);
   if (fieldErrorFlag == false) {
     console.log("field validations are false");
     return;
